@@ -1,6 +1,9 @@
 <div align="center">
 
-<img width="600" alt="YTSnap Logo" src="https://github.com/user-attachments/assets/9b3ffe92-cd20-48bb-8bb4-1f866325e8c9" />
+<img width="200" height="40" alt="badge-fast" src="https://github.com/user-attachments/assets/aa52ff0f-651e-4ba1-b7b9-c31973e33b52" /><img width="200" height="40" alt="badge-creators" src="https://github.com/user-attachments/assets/69732aa5-899c-4cec-93da-f5ec12b4c0d5" /> <img width="200" height="40" alt="badge-privacy" src="https://github.com/user-attachments/assets/cbc2c4b2-75ef-4f87-8c65-27e9115adfb7" />
+<br/><br/>
+
+<img width="450" height="300" alt="logo-icon" src="https://github.com/user-attachments/assets/dd4dd764-9740-4e08-a154-fe08fbdb974a" />
 
 <br/><br/>
 
