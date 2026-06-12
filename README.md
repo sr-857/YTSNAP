@@ -114,32 +114,7 @@
 
 </div>
 
----
 
-<div align="center">
-
-## **Deploy Your Own**
-
-```bash
-# Fork → Import to Netlify → Deploy (no build command needed)
-```
-
-**[→ Fork on GitHub](https://github.com/sr-857/YTSNAP)**
-
-<br/>
-
-## **Contributing**
-
-```bash
-git checkout -b feature/your-feature
-git commit -m "Add your feature"
-git push origin feature/your-feature
-# Open a Pull Request against main
-```
-
-*Keep it client-side. Keep it tracking-free.*
-
-<br/>
 
 ---
 
