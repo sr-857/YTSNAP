@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="600" alt="YTSnap Logo" src="https://github.com/user-attachments/assets/9b3ffe92-cd20-48bb-8bb4-1f866325e8c9" />
+<img width="500" height="120" alt="logo-horizontal" src="https://github.com/user-attachments/assets/a235f84e-4d28-4ba3-ad0b-a1bcc9a79f5c" />
 
 <br/><br/>
 
