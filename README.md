@@ -12,6 +12,7 @@
 <br/>
 
 [![Live](https://img.shields.io/badge/🚀%20LIVE-yt--snap.netlify.app-FF0000?style=for-the-badge)](https://yt-snap.netlify.app/)
+[![npm](https://img.shields.io/badge/📦%20npm-%40sr--857%2Fytsnap-CB3837?style=for-the-badge&logo=npm)](https://github.com/sr-857/YTSNAP/packages)
 [![GitHub](https://img.shields.io/badge/⭐%20SOURCE-sr--857%2FYTSNAP-181717?style=for-the-badge&logo=github)](https://github.com/sr-857/YTSNAP)
 
 ![](https://img.shields.io/badge/FREE-no%20signup-brightgreen?style=flat-square)
@@ -90,6 +91,61 @@
 
 <div align="center">
 
+## **npm Package — `@sr-857/ytsnap`**
+
+Use YTSnap programmatically in your Node.js projects.  
+[Published on GitHub Packages](https://github.com/sr-857/YTSNAP/packages).
+
+### Install
+
+```sh
+echo "@sr-857:registry=https://npm.pkg.github.com" >> .npmrc
+echo "//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN" >> .npmrc
+npm install @sr-857/ytsnap
+```
+
+### Quick Start
+
+```js
+const ytsnap = require('@sr-857/ytsnap');
+
+// Extract a video ID from any YouTube URL
+ytsnap.extractId('https://youtu.be/dQw4w9WgXcQ');
+// => 'dQw4w9WgXcQ'
+
+// Generate all deep link variants
+ytsnap.generateLinks('dQw4w9WgXcQ');
+// {
+//   youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+//   ios:     'youtube://www.youtube.com/watch?v=dQw4w9WgXcQ',
+//   android: 'intent://www.youtube.com/watch?v=dQw4w9WgXcQ#Intent;...;end',
+//   web:     'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+// }
+
+// Validate URLs
+ytsnap.isValidYouTubeUrl('https://youtube.com/watch?v=dQw4w9WgXcQ');
+// => true
+
+// Build redirect URLs
+ytsnap.buildRedirectUrl('dQw4w9WgXcQ', 'https://ytsnap.com');
+// => 'https://ytsnap.com?v=dQw4w9WgXcQ'
+```
+
+For the full API reference, see [PACKAGE.md](./PACKAGE.md).
+
+### Security
+
+- **Zero external dependencies** — no supply chain risk
+- **No network requests** — fully offline
+- **Input validated** on every function
+- **No `eval`**, no dynamic `require`
+
+</div>
+
+---
+
+<div align="center">
+
 ## **Privacy-First Architecture**
 
 | No Server | No Database | No Telemetry | No Cookies | No Ads | UTM-Safe |
@@ -114,8 +170,6 @@
 
 </div>
 
-
-
 ---
 
 <img width="800" alt="YTSnap Twitter Card" src="https://github.com/user-attachments/assets/d07cd3a6-1a2e-40aa-b5f2-25874dcd0261" />
@@ -124,7 +178,7 @@
 
 ### **Free · No Signup · No Tracking · No Ads · Client-Side Only**
 
-**[yt-snap.netlify.app](https://yt-snap.netlify.app/)** &nbsp;·&nbsp; **[GitHub](https://github.com/sr-857/YTSNAP)**
+**[yt-snap.netlify.app](https://yt-snap.netlify.app/)** &nbsp;·&nbsp; **[npm](https://github.com/sr-857/YTSNAP/packages)** &nbsp;·&nbsp; **[GitHub](https://github.com/sr-857/YTSNAP)**
 
 <br/>
 
