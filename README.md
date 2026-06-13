@@ -1,292 +1,215 @@
 <div align="center">
 
-<br/>
+<img width="750" alt="YTSnap Logo" src="https://github.com/user-attachments/assets/9b3ffe92-cd20-48bb-8bb4-1f866325e8c9" />
 
-<!-- Logo / Banner -->
-<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="90" alt="YTSnap Logo"/>
+<br/><br/>
 
-<h1>
-  <span style="color:#FF0000">YT</span>Snap
-</h1>
+# Open YouTube. In the App. Every Time.
 
-<p><strong>⚡ Snap. Save. Stream.</strong><br/>
-The fastest, cleanest YouTube downloader — supporting 4K, 1080p, 720p, MP3, and more.</p>
-
-[![npm version](https://img.shields.io/npm/v/ytsnap?color=FF0000&label=npm&style=flat-square)](https://github.com/sr-857/YTSNAP/pkgs/npm/ytsnap)
-[![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)](LICENSE)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D16-blue?style=flat-square&logo=node.js)](https://nodejs.org)
-[![Platform](https://img.shields.io/badge/platform-CLI%20%7C%20Web-lightgrey?style=flat-square)]()
-[![Downloads](https://img.shields.io/badge/downloads-growing-orange?style=flat-square)]()
-[![Stars](https://img.shields.io/github/stars/sr-857/YTSNAP?style=flat-square&color=yellow)](https://github.com/sr-857/YTSNAP)
+### Stop losing engagement to sandboxed browsers.
+### YTSnap turns any YouTube link into a native app deep link — instantly.
 
 <br/>
 
-[🚀 Quick Start](#-quick-start) · [✨ Features](#-features) · [📖 API Reference](#-api-reference) · [🖥️ CLI Usage](#%EF%B8%8F-cli-usage) · [🤝 Contributing](#-contributing)
+[![Live](https://img.shields.io/badge/%F0%9F%9A%80%20LIVE-yt--snap.netlify.app-FF0000?style=for-the-badge)](https://yt-snap.netlify.app/)
+[![npm](https://img.shields.io/badge/%F0%9F%93%A6%20npm-%40sr--857%2Fytsnap-CB3837?style=for-the-badge&logo=npm)](https://github.com/sr-857/YTSNAP/packages)
+[![GitHub](https://img.shields.io/badge/%E2%AD%90%20SOURCE-sr--857%2FYTSNAP-181717?style=for-the-badge&logo=github)](https://github.com/sr-857/YTSNAP)
+
+![](https://img.shields.io/badge/FREE-no%20signup-brightgreen?style=flat-square)
+![](https://img.shields.io/badge/CLIENT--SIDE-no%20server-blue?style=flat-square)
+![](https://img.shields.io/badge/TRACKING-none-lightgrey?style=flat-square)
+![](https://img.shields.io/badge/ADS-none-orange?style=flat-square)
 
 <br/>
+
+<img width="700" alt="YTSnap Hero" src="https://github.com/user-attachments/assets/424101d3-370c-4711-8346-eaae6a80a5f7" />
 
 </div>
 
 ---
 
-## ✨ Features
+## Table of Contents
 
-| Feature | Details |
-|---|---|
-| 🎬 **Video Quality** | 4K Ultra HD · 1080p Full HD · 720p HD · 480p SD · 360p Low |
-| 🎵 **Audio Extraction** | MP3 (high-quality audio-only) |
-| 🔐 **No Auth Required** | No API keys, no login, no registration |
-| 🌐 **Dual Mode** | Use as a CLI tool **or** as a programmatic library |
-| 💾 **Custom Output** | Specify destination filename and directory |
-| 🧼 **Zero Bloat** | Minimal dependencies, clean codebase |
-| ⚡ **Fast** | Optimised download pipeline with progress reporting |
-
----
-
-## 🚀 Quick Start
-
-### Installation
-
-```bash
-# Install globally for CLI use
-npm install -g ytsnap
-
-# Or add to your project
-npm install ytsnap
-```
-
-### As a CLI tool
-
-```bash
-# Download a video in 1080p
-ytsnap --url "https://www.youtube.com/watch?v=dQw4w9WgXcQ" --quality 1080p
-
-# Extract audio as MP3
-ytsnap --url "https://www.youtube.com/watch?v=dQw4w9WgXcQ" --format mp3
-
-# Download in 4K to a custom folder
-ytsnap --url "https://youtu.be/dQw4w9WgXcQ" --quality 4k --output ./downloads
-```
-
-### As a Node.js library
-
-```javascript
-const ytsnap = require('ytsnap');
-
-// Download a video
-await ytsnap.download({
-  url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-  quality: '1080p',
-  output: './downloads'
-});
-
-// Extract audio only
-await ytsnap.download({
-  url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-  format: 'mp3',
-  filename: 'my-song'
-});
-```
+- [The Problem](#the-problem)
+- [How It Works](#how-it-works)
+- [Supported Formats](#supported-formats)
+- [Use It in 3 Steps](#use-it-in-3-steps)
+- [npm Package](#npm-package----sr-857ytsnap)
+- [Privacy-First Architecture](#privacy-first-architecture)
+- [Who It's For](#who-its-for)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🖥️ CLI Usage
+## The Problem
 
-```
-ytsnap [options]
+When someone taps a YouTube link inside Instagram, WhatsApp, TikTok, or any other app — it opens in a **sandboxed in-app browser**. The viewer is not logged into Google. They cannot like, comment, or subscribe. You lose the engagement.
 
-Options:
-  --url,     -u   YouTube video URL (required)
-  --quality, -q   Video quality: 4k | 1080p | 720p | 480p | 360p  [default: "1080p"]
-  --format,  -f   Output format:  mp4 | mp3                        [default: "mp4"]
-  --output,  -o   Output directory                                 [default: ./]
-  --filename     Custom filename (no extension)
-  --help,    -h   Show help
-  --version, -v   Show version number
-```
-
-### Examples
-
-```bash
-# Best quality video
-ytsnap -u "https://youtu.be/VIDEO_ID" -q 4k
-
-# Audio only — great for podcasts & music
-ytsnap -u "https://youtu.be/VIDEO_ID" -f mp3 -o ~/Music
-
-# Data-saver quality
-ytsnap -u "https://youtu.be/VIDEO_ID" -q 360p
-
-# Custom filename
-ytsnap -u "https://youtu.be/VIDEO_ID" --filename "my-video" -o ./clips
-```
+| ❌ Without YTSnap | ✅ With YTSnap |
+|:---|:---|
+| Opens in sandboxed in-app browser | Opens native YouTube app |
+| User is **not logged in** | Session fully intact |
+| Can't like · comment · subscribe | Full engagement enabled |
+| Creator loses every conversion | Frictionless viewer experience |
 
 ---
 
-## 📖 API Reference
+## How It Works
 
-### `ytsnap.download(options)`
-
-Downloads a YouTube video or audio track.
-
-| Parameter | Type | Required | Default | Description |
-|---|---|---|---|---|
-| `url` | `string` | ✅ | — | Full YouTube video URL |
-| `quality` | `string` | ❌ | `"1080p"` | `"4k"` · `"1080p"` · `"720p"` · `"480p"` · `"360p"` |
-| `format` | `string` | ❌ | `"mp4"` | `"mp4"` or `"mp3"` |
-| `output` | `string` | ❌ | `"./"` | Output directory path |
-| `filename` | `string` | ❌ | Video title | Custom filename (without extension) |
-
-**Returns:** `Promise<{ path: string, size: string, duration: string }>`
-
-```javascript
-const result = await ytsnap.download({
-  url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-  quality: '1080p',
-  output: './downloads',
-  filename: 'rick-roll'
-});
-
-console.log(result);
-// { path: './downloads/rick-roll.mp4', size: '42 MB', duration: '3:33' }
+```
+Paste URL  →  Click SNAP  →  Copy link  →  Share anywhere  →  YouTube app opens
 ```
 
-### `ytsnap.getInfo(url)`
+YTSnap detects the viewer's platform and fires the correct deep link scheme — entirely client-side, with no server involved.
 
-Fetches metadata for a YouTube video without downloading.
-
-```javascript
-const info = await ytsnap.getInfo('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-
-console.log(info);
-// {
-//   title: 'Rick Astley - Never Gonna Give You Up',
-//   duration: '3:33',
-//   author: 'Rick Astley',
-//   availableQualities: ['4k', '1080p', '720p', '480p', '360p'],
-//   thumbnail: 'https://...'
-// }
-```
+| Platform | Deep Link Fired |
+|:---|:---|
+| 🍎 **iOS** | `youtube://www.youtube.com/watch?v={ID}` |
+| 🤖 **Android** | `intent://www.youtube.com/watch?v={ID}#Intent;scheme=https;package=com.google.android.youtube;end` |
+| 🖥️ **Desktop** | `https://www.youtube.com/watch?v={ID}` *(graceful fallback)* |
 
 ---
 
-## 🎯 Quality Guide
+## Supported Formats
 
-```
-┌─────────────────────────────────────────────────────────┐
-│  Quality      Resolution    Best For               Size  │
-├─────────────────────────────────────────────────────────┤
-│  4K           3840×2160     Large screens / TVs   ~600MB │
-│  1080p ★      1920×1080     Everyday watching     ~150MB │
-│  720p         1280×720      Balanced quality       ~80MB │
-│  480p         854×480       Data saving            ~40MB │
-│  360p         640×360       Minimal storage        ~20MB │
-│  MP3          Audio only    Music / Podcasts        ~5MB │
-└─────────────────────────────────────────────────────────┘
-  ★ Recommended default
-```
+All four YouTube URL formats are parsed and deep linked automatically.
+
+| Format | Example |
+|:---|:---|
+| Standard watch URL | `youtube.com/watch?v=dQw4w9WgXcQ` |
+| Short URL | `youtu.be/dQw4w9WgXcQ` |
+| Shorts | `youtube.com/shorts/dQw4w9WgXcQ` |
+| Live stream | `youtube.com/live/dQw4w9WgXcQ` |
 
 ---
 
-## ⚙️ Requirements
+## Use It in 3 Steps
 
-- **Node.js** v16 or higher
-- **npm** v7+
-- Internet connection
+**① Paste** your YouTube URL at [yt-snap.netlify.app](https://yt-snap.netlify.app/)
+
+**② Click SNAP** — deep link generated in milliseconds
+
+**③ Share** — Instagram bio · TikTok · Twitter · WhatsApp · Discord · Email
 
 ---
 
-## 📦 Installation from GitHub Packages
+## npm Package — `@sr-857/ytsnap`
 
-This package is published to GitHub Packages under `@sr-857/ytsnap`. To install:
+Use YTSnap programmatically in your Node.js projects.
+Published on [GitHub Packages](https://github.com/sr-857/YTSNAP/packages).
 
-1. Create or update your `.npmrc` file in your project root:
+### Install
 
-```bash
-@sr-857:registry=https://npm.pkg.github.com
-```
+Configure your `.npmrc` to point the `@sr-857` scope at GitHub Packages:
 
-2. Authenticate with GitHub Packages:
-
-```bash
-npm login --registry=https://npm.pkg.github.com
-```
-
-3. Install the package:
-
-```bash
+```sh
+echo "@sr-857:registry=https://npm.pkg.github.com" >> .npmrc
+echo "//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN" >> .npmrc
 npm install @sr-857/ytsnap
 ```
 
----
+> **Note:** A GitHub personal access token with at least `read:packages` scope is required to install from GitHub Packages.
 
-## 🛠️ Development
+### Quick Start
 
-```bash
-# Clone the repository
-git clone https://github.com/sr-857/YTSNAP.git
-cd YTSNAP
+```js
+const ytsnap = require('@sr-857/ytsnap');
 
-# Install dependencies
-npm install
+// Extract a video ID from any YouTube URL
+ytsnap.extractId('https://youtu.be/dQw4w9WgXcQ');
+// => 'dQw4w9WgXcQ'
 
-# Run tests
-npm test
+// Generate all deep link variants
+ytsnap.generateLinks('dQw4w9WgXcQ');
+// {
+//   youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+//   ios:     'youtube://www.youtube.com/watch?v=dQw4w9WgXcQ',
+//   android: 'intent://www.youtube.com/watch?v=dQw4w9WgXcQ#Intent;scheme=https;package=com.google.android.youtube;end',
+//   web:     'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+// }
 
-# Link locally for CLI testing
-npm link
-ytsnap --help
+// Validate a YouTube URL
+ytsnap.isValidYouTubeUrl('https://youtube.com/watch?v=dQw4w9WgXcQ');
+// => true
+
+// Build a redirect URL
+ytsnap.buildRedirectUrl('dQw4w9WgXcQ', 'https://yt-snap.netlify.app');
+// => 'https://yt-snap.netlify.app?v=dQw4w9WgXcQ'
 ```
 
----
+### API Reference
 
-## 🗺️ Roadmap
+| Function | Parameters | Returns | Description |
+|:---|:---|:---|:---|
+| `extractId(input)` | `input: string` | `string \| null` | Extracts an 11-character video ID from any supported YouTube URL. Returns `null` if no valid ID is found. |
+| `isValidYouTubeUrl(input)` | `input: string` | `boolean` | Returns `true` if the input is a recognizable YouTube video URL. |
+| `generateLinks(videoId)` | `videoId: string` | `{ youtube, ios, android, web }` | Generates all platform-specific deep link variants for the given video ID. |
+| `buildRedirectUrl(videoId, baseUrl)` | `videoId: string`, `baseUrl: string` | `string` | Appends `?v={videoId}` to the provided base URL to build a redirect-compatible link. |
 
-- [x] Video download (MP4) — 360p to 4K
-- [x] Audio extraction (MP3)
-- [x] CLI support
-- [x] Programmatic API
-- [ ] Playlist download support
-- [ ] Progress bar with ETA
-- [ ] Subtitle / caption download
-- [ ] Format conversion (WebM, AAC, FLAC)
-- [ ] Batch URL processing from `.txt` file
+For the complete API reference including parameter types, return types, edge cases, platform routing logic, error handling, performance benchmarks, and full integration examples, see [PACKAGE.md](./PACKAGE.md).
 
----
+### Security
 
-## 🤝 Contributing
-
-Contributions are welcome! Here's how to get started:
-
-1. **Fork** the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a **Pull Request**
-
-Please open an [issue](https://github.com/sr-857/YTSNAP/issues) first to discuss significant changes.
+- **Zero external dependencies** — no supply chain risk
+- **No network requests** — all processing is fully offline
+- **Input validated** on every function call
+- **No `eval`**, no dynamic `require`, no unsafe patterns
 
 ---
 
-## 📄 License
+## Privacy-First Architecture
 
-Released under the **MIT License** — see [LICENSE](LICENSE) for details.
+100% client-side JavaScript. Nothing is stored. Nothing is tracked. Ever.
+
+| No Server | No Database | No Telemetry | No Cookies | No Ads | UTM-Safe |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+UTM parameters and other query strings present in the original URL are preserved through the deep link generation process.
 
 ---
 
-## ⚠️ Disclaimer
+## Who It's For
 
-YTSnap is intended for **personal, educational, and offline use only**. Downloading copyrighted content without permission may violate YouTube's [Terms of Service](https://www.youtube.com/t/terms). The author assumes no liability for misuse.
+**🎬 Creators** — Instagram bio links that open your video logged-in, ready to subscribe. Stop losing conversions to in-app browsers.
+
+**📈 Marketers** — Email campaigns where mobile readers land in the app, not a stripped-down browser. Full engagement, zero friction.
+
+**🏢 Agencies** — WhatsApp, Discord, and SMS campaigns that demand native-quality UX across every platform.
+
+**🛠️ Developers** — Drop `@sr-857/ytsnap` into any Node.js app and deep link YouTube at the API level, zero dependencies.
+
+---
+
+## Contributing
+
+Contributions, bug reports, and feature requests are welcome.
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add your feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a pull request
+
+Please open an issue first for significant changes so we can discuss the approach.
+
+---
+
+## License
+
+This project is open source. See [LICENSE](./LICENSE) for details.
 
 ---
 
 <div align="center">
 
-Made with ❤️ by [sr-857](https://github.com/sr-857)
+<img width="800" alt="YTSnap Twitter Card" src="https://github.com/user-attachments/assets/d07cd3a6-1a2e-40aa-b5f2-25874dcd0261" />
 
-⭐ **Star this repo** if YTSnap saved you time!
+<br/><br/>
 
-[![GitHub](https://img.shields.io/badge/GitHub-sr--857-181717?style=flat-square&logo=github)](https://github.com/sr-857)
-[![Telegram](https://img.shields.io/badge/Community-Telegram-26A5E4?style=flat-square&logo=telegram)](https://t.me/ytsnapofficial)
+**Free · No Signup · No Tracking · No Ads · Client-Side Only**
+
+[yt-snap.netlify.app](https://yt-snap.netlify.app/) &nbsp;·&nbsp; [npm](https://github.com/sr-857/YTSNAP/packages) &nbsp;·&nbsp; [GitHub](https://github.com/sr-857/YTSNAP)
 
 </div>
