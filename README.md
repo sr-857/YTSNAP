@@ -131,7 +131,16 @@ ytsnap.buildRedirectUrl('dQw4w9WgXcQ', 'https://ytsnap.com');
 // => 'https://ytsnap.com?v=dQw4w9WgXcQ'
 ```
 
-For the full API reference, see [PACKAGE.md](./PACKAGE.md).
+### API Summary
+
+| Function | Purpose | Returns |
+|----------|---------|---------|
+| `extractId(input)` | Extract video ID from any YouTube URL | `string \| null` |
+| `isValidYouTubeUrl(input)` | Check if input is a valid YouTube video URL | `boolean` |
+| `generateLinks(videoId)` | Generate iOS, Android, and web deep links | `{ youtube, ios, android, web }` |
+| `buildRedirectUrl(videoId, baseUrl)` | Build a `?v=` redirect URL | `string` |
+
+For the complete API reference with parameters, return types, edge cases, platform routing logic, error handling, security analysis, performance benchmarks, and full integration examples, see **[PACKAGE.md](./PACKAGE.md)**.
 
 ### Security
 
